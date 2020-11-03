@@ -1,6 +1,5 @@
 package guru.springframework;
 
-import guru.springframework.sfgpetclinic.model.Owner;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
@@ -12,7 +11,11 @@ public class InlineMockTest {
 
     @Test
     void testInlineMock() {
+
+        // define an inline mock for the 'Map' class
         Map mapMock = mock(Map.class);
+
+        // validate that it's empty, as expected
         assertEquals(mapMock.size(), 0);
 
     }
