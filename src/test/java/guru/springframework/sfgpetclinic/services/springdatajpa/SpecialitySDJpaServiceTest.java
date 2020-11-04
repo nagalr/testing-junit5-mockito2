@@ -8,6 +8,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
 /**
  * @author Ronnen Nagal
  * @created 04/11/2020 - 4:34 p.m.
@@ -28,7 +31,18 @@ class SpecialitySDJpaServiceTest {
      */
     @Test
     void delete() {
+        /*
+         calling 'specialtyRepository' twice
+         with 'deleteById'
+         */
         service.deleteById(1L);
+        service.deleteById(1L);
+
+        /*
+         verify that 'specialtyRepository' was called
+         twice using 'deleteById' method
+         */
+        verify(specialtyRepository, times(2)).deleteById(1L);
     }
 
     @Test
