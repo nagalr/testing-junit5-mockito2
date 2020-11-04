@@ -22,6 +22,10 @@ class SpecialitySDJpaServiceTest {
     @InjectMocks
     SpecialitySDJpaService service;
 
+    /*
+     a brand new mock will be created
+     for each of the following methods
+     */
     @Test
     void delete() {
         service.deleteById(1L);
