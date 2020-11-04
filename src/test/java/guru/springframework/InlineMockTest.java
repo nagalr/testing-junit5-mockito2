@@ -12,7 +12,10 @@ public class InlineMockTest {
     @Test
     void testInlineMock() {
 
-        // define an inline mock for the 'Map' class
+        /*
+         define an inline mock for the 'Map' class
+         using a static method to create a mock
+        */
         Map mapMock = mock(Map.class);
 
         // validate that it's empty, as expected
