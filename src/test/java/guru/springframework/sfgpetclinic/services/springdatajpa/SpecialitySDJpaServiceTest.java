@@ -61,6 +61,24 @@ class SpecialitySDJpaServiceTest {
     }
 
     @Test
+    void deleteByIdAtMost() {
+        /*
+         calling 'specialtyRepository' twice
+         with 'deleteById'
+         */
+        service.deleteById(1L);
+        service.deleteById(1L);
+
+        /*
+         verify that 'specialtyRepository' was called
+         as least once using 'deleteById' method
+         */
+        verify(specialtyRepository, atMost(2)).deleteById(1L);
+    }
+
+
+
+    @Test
     void testDelete() {
         service.delete(new Speciality());
     }
