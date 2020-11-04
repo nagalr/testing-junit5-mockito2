@@ -7,15 +7,15 @@ public class BaseEntity implements Serializable {
 
     private Long id;
 
-    public boolean isNew() {
-        return this.id == null;
-    }
-
     public BaseEntity() {
     }
 
     public BaseEntity(Long id) {
         this.id = id;
+    }
+
+    public boolean isNew() {
+        return this.id == null;
     }
 
     public Long getId() {
