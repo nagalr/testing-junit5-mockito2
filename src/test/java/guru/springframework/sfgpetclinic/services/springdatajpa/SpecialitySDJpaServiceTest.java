@@ -76,7 +76,22 @@ class SpecialitySDJpaServiceTest {
         verify(specialtyRepository, atMost(2)).deleteById(1L);
     }
 
+    @Test
+    void deleteByIdAtNever() {
+        /*
+         calling 'specialtyRepository' twice
+         with 'deleteById'
+         */
+        service.deleteById(1L);
+        service.deleteById(1L);
 
+        /*
+         verify that 'specialtyRepository' was never called
+         with a '2L' long-value using 'deleteById' method
+         */
+        verify(specialtyRepository, atLeastOnce()).deleteById(1L);
+        verify(specialtyRepository, never()).deleteById(2L);
+    }
 
     @Test
     void testDelete() {
