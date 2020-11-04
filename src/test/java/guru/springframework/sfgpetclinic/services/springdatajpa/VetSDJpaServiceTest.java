@@ -37,6 +37,8 @@ class VetSDJpaServiceTest {
     @Test
     void deleteById() {
         service.deleteById(1L);
+
+        // using the default value 1 for times
         verify(specialtyRepository, times(1)).deleteById(1L);
     }
 }
