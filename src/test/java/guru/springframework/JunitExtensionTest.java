@@ -7,6 +7,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 /**
  * @author Ronnen Nagal
  * @created 04/11/2020 - 4:14 p.m.
@@ -24,8 +27,7 @@ public class JunitExtensionTest {
 
     @Test
     void testMock() {
-        mapMock.put("keyvalue", "foo");
+        mapMock.put("key", "foo");
+        assertFalse(mapMock.isEmpty());
     }
-
-
 }
