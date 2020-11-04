@@ -14,7 +14,7 @@ public class InlineMockTest {
 
         /*
          define an inline mock for the 'Map' class
-         using a static method to create a mock
+         using a static method of mockito to create a mock
         */
         Map mapMock = mock(Map.class);
 
