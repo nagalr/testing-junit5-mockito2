@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.services.springdatajpa;
 
+import guru.springframework.sfgpetclinic.model.Speciality;
 import guru.springframework.sfgpetclinic.repositories.SpecialtyRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -23,6 +24,12 @@ class SpecialitySDJpaServiceTest {
 
     @Test
     void delete() {
+        service.deleteById(1L);
+    }
+
+    @Test
+    void testDelete() {
+        service.delete(new Speciality());
     }
 }
 
