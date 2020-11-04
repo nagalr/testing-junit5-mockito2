@@ -32,13 +32,11 @@ class VetSDJpaServiceTest {
     SpecialtyRepository specialtyRepository;
 
     @InjectMocks
-    SpecialitySDJpaService specialitySDJpaService;
+    SpecialitySDJpaService service;
 
     @Test
     void deleteById() {
-        specialitySDJpaService.deleteById(1L);
+        service.deleteById(1L);
         verify(specialtyRepository, times(1)).deleteById(1L);
     }
 }
-
-
