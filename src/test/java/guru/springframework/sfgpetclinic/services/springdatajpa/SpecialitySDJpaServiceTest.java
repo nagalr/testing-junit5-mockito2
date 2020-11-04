@@ -11,6 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;
 
 /**
@@ -38,6 +39,9 @@ class SpecialitySDJpaServiceTest {
 
         // assertj library
         assertThat(foundSpeciality).isNotNull();
+
+        // junit library (the same as the above)
+        assertNotNull(foundSpeciality);
 
         verify(specialtyRepository, times(1)).findById(1L);
     }
