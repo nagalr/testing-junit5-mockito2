@@ -15,6 +15,10 @@ import java.util.Map;
 @ExtendWith(MockitoExtension.class)
 public class JunitExtensionTest {
 
+    /*
+     The same as 'AnnotationMockTest' but the 'init
+     is executing by Mockito (not @setup method here)
+     */
     @Mock
     Map<String, Object> mapMock;
 
