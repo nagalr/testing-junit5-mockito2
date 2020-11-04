@@ -71,7 +71,7 @@ class SpecialitySDJpaServiceTest {
 
         /*
          verify that 'specialtyRepository' was called
-         as least once using 'deleteById' method
+         as Most twice using 'deleteById' method
          */
         verify(specialtyRepository, atMost(2)).deleteById(1L);
     }
