@@ -33,7 +33,8 @@ class SpecialitySDJpaServiceTest {
 
         Speciality speciality = new Speciality();
 
-        when(specialtyRepository.findById(1L)).thenReturn(Optional.of(speciality));
+        when(specialtyRepository.findById(1L))
+                .thenReturn(Optional.of(speciality));
 
         Speciality foundSpeciality = service.findById(1L);
 
@@ -43,7 +44,9 @@ class SpecialitySDJpaServiceTest {
         // junit library (the same as the above)
         assertNotNull(foundSpeciality);
 
-        verify(specialtyRepository, times(1)).findById(1L);
+        // verify the Mock 'specialtyRepository' called ones
+        verify(specialtyRepository, times(1))
+                .findById(1L);
     }
 
     /*
